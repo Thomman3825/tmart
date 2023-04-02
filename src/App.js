@@ -1,23 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
 
+
+import { useState } from 'react';
+import Products from './Products';
+import NavB from './NavB'
+import AddProduct from './AddProduct';
+
 function App() {
+  const [showForm, setShowForm]=useState(false)
+  const [products, setProduct]=useState([
+    {
+      id:1,
+      pname:'Turbo',
+      price: 50000
+    },
+    {
+      id:2,
+      pname:'Smart Wax',
+      price: 500
+    },
+    {
+      id:3,
+      pname:'BMC DiA Intake',
+      price: 9500
+    }
+  ])
+  const addProdruct =(product)=>{
+    setProduct([...products,product])
+  }
+  
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    
+    <div >
+      <header>
+        <NavB onAdd={ () => setShowForm(!showForm)}></NavB>
       </header>
+      <div>
+     { showForm && <AddProduct onAdd={addProdruct}></AddProduct>}
+     <Products products={products}></Products>
+     </div>
+     {/* {console.log(products)} */}
     </div>
   );
 }
