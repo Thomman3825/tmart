@@ -6,7 +6,7 @@ const Products = ({products}) => {
   return (
     <div className='products'>
         { products.map((product)=>(
-         <Product key={product.id} pselect={products}></Product>
+         <Product key={product.id} pselect={product}></Product>
     ))}
     {console.log(products)}
     </div>

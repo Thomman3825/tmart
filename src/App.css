@@ -39,4 +39,5 @@
 .products{
   display: flex;
   flex-direction: row;
+  width: 1000px;
 }
