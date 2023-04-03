@@ -1,7 +1,7 @@
 import './App.css';
 
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Products from './Products';
 import NavB from './NavB'
 import AddProduct from './AddProduct';
@@ -12,26 +12,19 @@ import turbo from './Images/turbo.jpg'
 
 function App() {
   const [showForm, setShowForm]=useState(false)
-  const [products, setProduct]=useState([
-    {
-      id:1,
-      pname:'Turbo',
-      price: 50000,
-      img: bmc
-    },
-    {
-      id:2,
-      pname:'Smart Wax',
-      price: 500,
-      img:smartwax
-    },
-    {
-      id:3,
-      pname:'BMC DiA Intake',
-      price: 9500,
-      img:turbo
+  const [products, setProduct]=useState([])
+
+  useEffect (() =>{
+    const fetchProduct= async()=>{
+      const res=await fetch('http://localhost:3333/products');
+      console.log(res);
+      const newData = await res.json()
+      setProduct(newData)
     }
-  ])
+    fetchProduct()
+  },[])
+  
+ 
   const addProdruct =(product)=>{
     setProduct([...products,product])
   }

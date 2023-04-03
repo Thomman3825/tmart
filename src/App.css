@@ -39,5 +39,9 @@
 .products{
   display: flex;
   flex-direction: row;
-  width: 1000px;
+  
+}
+.btn{
+  max-width: 100px;
+  margin-left: 25% ;
 }

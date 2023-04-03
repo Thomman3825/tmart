@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "pname": "Turbo",
+      "price": 50000
+    },
+    {
+      "id": 2,
+      "pname": "Smart Wax",
+      "price": 500
+    },
+    {
+      "id": 3,
+      "pname": "BMC DiA Intake",
+      "price": 9500
+    }
+  ]
+}

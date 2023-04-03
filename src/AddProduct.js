@@ -10,7 +10,7 @@ const AddProduct = ({onAdd}) => {
     const onSubmit=(e)=>{
         e.preventDefault()
         console.log('Submit Clicked');
-        onAdd({pname,price})
+        onAdd({pname,price,img})
 
         setName('')
         setPrice(0)
@@ -19,7 +19,7 @@ const AddProduct = ({onAdd}) => {
 
   return (
     <div>
-        <Card>
+        <Card style={{width:'50%' , display:''}}>
             <Card.Body>
                 <Card.Title>
                     Add Product

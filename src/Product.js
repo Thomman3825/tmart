@@ -9,7 +9,7 @@ const Product = ({pselect}) => {
   return (
     <div >
         <Container>
-        <Card style={{color:'black'}} >
+        <Card style={{color:'black', width:'200px'}} >
           <Card.Img src={pselect.img} width='100px' height={'100'}></Card.Img>
           <Card.Body>
             <Card.Title>{pselect.pname}</Card.Title>
