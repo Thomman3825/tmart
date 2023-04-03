@@ -9,7 +9,7 @@ const AddProduct = ({onAdd}) => {
 
     const onSubmit=(e)=>{
         e.preventDefault()
-        console.log('Submit Clicked');
+        //console.log('Submit Clicked');
         onAdd({pname,price,img})
 
         setName('')

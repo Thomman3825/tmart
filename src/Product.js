@@ -5,9 +5,9 @@ import Card from 'react-bootstrap/Card'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container } from 'react-bootstrap'
 
-const Product = ({pselect}) => {
+const Product = ({pselect,onClick}) => {
   return (
-    <div >
+    <div className='product'>
         <Container>
         <Card style={{color:'black', width:'200px'}} >
           <Card.Img src={pselect.img} width='100px' height={'100'}></Card.Img>
@@ -15,7 +15,7 @@ const Product = ({pselect}) => {
             <Card.Title>{pselect.pname}</Card.Title>
             <Card.Text>{pselect.price}</Card.Text>
           </Card.Body>
-        <Button><AiOutlineShoppingCart></AiOutlineShoppingCart></Button>
+        <Button><AiOutlineShoppingCart onClick={()=>onClick(pselect.id)}></AiOutlineShoppingCart></Button>
           </Card> 
         </Container>
           {console.log(pselect.pname)}
